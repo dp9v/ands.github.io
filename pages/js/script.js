@@ -60,17 +60,19 @@ $(document).ready(function () {
                 edgesToRemove.add(index);
             }
         })
-        edges = edges.filter((value, index) => {
-            return !edgesToRemove.has(index);
-        }).map(value => {
-            if (value.left>removingIndex) {
-                value.left--;
-            }
-            if (value.right>removingIndex) {
-                value.right--;
-            }
-            return value;
-        })
+        edges = edges
+            .filter((value, index) => {
+                return !edgesToRemove.has(index);
+            })
+            .map(value => {
+                if (value.left > removingIndex) {
+                    value.left--;
+                }
+                if (value.right > removingIndex) {
+                    value.right--;
+                }
+                return value;
+            })
         repaint();
     }
 
@@ -85,7 +87,7 @@ $(document).ready(function () {
         let point = getCanvasMousePoint(event);
         selectedNode = findNodeIndex(point.x, point.y);
 
-        if (event.button === 1 && selectedNode !== -1){
+        if (event.button === 1 && selectedNode !== -1) {
             deleteNode(selectedNode);
             selectedNode = -1;
         } else if (event.ctrlKey && selectedNode !== -1) {
