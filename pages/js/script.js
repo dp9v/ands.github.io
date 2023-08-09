@@ -14,10 +14,13 @@ $(document).ready(function () {
     }
 
     function drawNodes(context) {
-        context.fillStyle = "black";
+        context.fillStyle = "white";
+        context.strokeStyle = "black";
+
         nodes.forEach(point => {
             context.beginPath();
             context.arc(point.x, point.y, radius, 0, 2 * Math.PI);
+            context.fill();
             context.stroke();
         });
     }
