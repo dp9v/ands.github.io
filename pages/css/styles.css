@@ -1,0 +1,28 @@
+
+/* Добавление стилей для темного хедера и футтера */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #343a40; /* Цвет темного фона */
+    color: white; /* Цвет текста */
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Стили для блока canvas */
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Минимальная высота для выравнивания по центру */
+}
+
+/* Стиль для канвы */
+#myCanvas {
+    border: 1px solid black; /* Тонкая черная граница */
+    border-radius: 10px; /* Скругленные углы */
+}
