@@ -17,11 +17,15 @@ $(document).ready(function () {
         context.fillStyle = "white";
         context.strokeStyle = "black";
 
-        nodes.forEach(point => {
+        nodes.forEach((point, index) => {
+            context.fillStyle = "white";
             context.beginPath();
             context.arc(point.x, point.y, radius, 0, 2 * Math.PI);
             context.fill();
             context.stroke();
+            context.fillStyle = "black";
+            context.font = "32px serif";
+            context.fillText(index+1+"",point.x-10, point.y + 10);
         });
     }
 
